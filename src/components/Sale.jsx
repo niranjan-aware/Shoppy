@@ -74,24 +74,24 @@ const Sale = () => {
   }, [currentIndex]);
 
   return (
-    <div className="max-w-[1400px] h-[780px] w-full m-auto py-16 pt-40 relative group">
+    <div className="max-w-[1400px] max-h-[780px] w-full m-auto py-10 sm:py-3 pt-32 sm:pt-24 relative group">
       <div className="flex w-full h-full sm:flex-col ">
         <div
           style={{ backgroundImage: `url(${slides[currentIndex].imageUrl})` }}
-          className="w-4/5 h-[500px] sm:w-full  bg-center bg-cover duration-500 rounded-l-2xl"
+          className="w-4/5 h-[500px] sm:w-full  bg-center bg-cover duration-500 rounded-l-2xl sm:rounded-none sm:h-[300px]"
         ></div>
-        <div className="w-1/5 h-[500px] sm:h-[100px] sm:flex-row sm:w-full  bg-cyan-50 rounded-r-2xl p-8 flex flex-col justify-evenly items-center sm:justify-between">
+        <div className="w-1/5 h-[500px] sm:h-[100px] sm:flex-row sm:w-full sm:rounded-none rounded-r-2xl p-8 flex flex-col justify-evenly items-center sm:justify-between side-bar button-with-background">
           <a href="#">
-            <h5 className="mb-2 sm:text-lg text-2xl font-bold tracking-tight text-gray-900">
+            <h5 className="mb-2 sm:text-lg text-4xl font-bold tracking-tight text-white">
               {slides[currentIndex].content.title}
             </h5>
           </a>
-          <p className="mb-3 font-normal sm:text-[10px] text-gray-700 dark:text-gray-400">
+          <p className="mb-3 font-normal sm:text-[10px] text-cyan-100">
             {slides[currentIndex].content.description}
           </p>
           <a
             href="#"
-            className="inline-flex items-center sm:text-[14px] px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            className="inline-flex items-center sm:text-[12px]  sm:px-1 sm:py-1 px-3 py-2 text-sm font-medium text-center text-slate-500  bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-rose-200 dark:hover:bg-blue-700 dark:focus:ring-blue-800 "
           >
             Explore
             <svg

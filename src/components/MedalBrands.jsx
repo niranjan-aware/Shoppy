@@ -4,26 +4,49 @@ import { RxDotFilled } from "react-icons/rx";
 
 const MedalBrands = () => {
   const slides = [
-    {
-      imageUrl1:
-      "https://source.unsplash.com/unpaired-red-nike-sneaker-164_6wVEHfI",
-      imageUrl2:
-      "https://source.unsplash.com/red-levis-tag-jtajCh63U88",
-      imageUrl3:
-        "https://source.unsplash.com/black-louis-vuitton-backpack-OmIEij4MhnA",
-      imageUrl4:
-        "https://source.unsplash.com/white-and-black-calvin-klein-perfume-bottle-mfvTtNPjoPY",
-    },
-    {
-      imageUrl1:
-        "https://source.unsplash.com/black-gucci-leather-shoulder-bag-ZmeFtu11Hpc",
-      imageUrl2:
-        "https://source.unsplash.com/blue-and-white-nike-athletic-shoes-2kCv5ZSxTzo",
-      imageUrl3:
-       "https://source.unsplash.com/man-with-dreadlocks-hair-wearing-black-and-gold-adidas-crew-neck-shirt-jsfXC8EZy1s",
-      imageUrl4:
-        "https://source.unsplash.com/space-black-apple-watch-uFTRn_Ki5jM",
-    },
+    [
+      {
+        imageUrl1:
+          "https://source.unsplash.com/unpaired-red-nike-sneaker-164_6wVEHfI",
+        title: "Nike Shoes",
+      },
+      {
+        imageUrl2: "https://source.unsplash.com/red-levis-tag-jtajCh63U88",
+        title: "Levis Jeans",
+      },
+      {
+        imageUrl3:
+          "https://source.unsplash.com/black-louis-vuitton-backpack-OmIEij4MhnA",
+        title: "Louis-Vuitton Bags",
+      },
+      {
+        imageUrl4:
+          "https://source.unsplash.com/white-and-black-calvin-klein-perfume-bottle-mfvTtNPjoPY",
+        title: "Calvin-Klein Perfumes",
+      },
+    ],
+    [
+      {
+        imageUrl1:
+          "https://source.unsplash.com/black-gucci-leather-shoulder-bag-ZmeFtu11Hpc",
+        title: "Gucci Bags",
+      },
+      {
+        imageUrl2:
+          "https://source.unsplash.com/blue-and-white-nike-athletic-shoes-2kCv5ZSxTzo",
+        title: "Puma Sneakers",
+      },
+      {
+        imageUrl3:
+          "https://source.unsplash.com/man-with-dreadlocks-hair-wearing-black-and-gold-adidas-crew-neck-shirt-jsfXC8EZy1s",
+        title: "adidas clothing",
+      },
+      {
+        imageUrl4:
+          "https://source.unsplash.com/space-black-apple-watch-uFTRn_Ki5jM",
+        title: "Watches",
+      },
+    ],
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -54,164 +77,51 @@ const MedalBrands = () => {
   }, [currentIndex]);
 
   return (
-    <div className="max-w-[1400px] h-[500px] w-full m-auto  relative group">
+    <div className="max-w-[1400px] max-h-[500px] w-full m-auto  relative group overflow-x-hidden">
       <div className="flex flex-row justify-evenly ">
-      <div class="max-w-80 max-h-[400px]   bg-white border border-gray-200 rounded-lg shadow dark:bg-slate-100 ">
-          <a href="#">
-            <img
-              className="rounded-t-lg h-[250px]"
-              src={slides[currentIndex].imageUrl1}
-              alt=""
-            />
-          </a>
-          <div class="p-5">
+        {slides[currentIndex].map((item, itemIndex) => (
+          <div
+            key={itemIndex}
+            className="max-w-80 lg:max-w-[250px] sm:max-w-[100px] sm:max-h-[200px] md:max-w-[200px] max-h-[350px] bg-white border border-gray-200 rounded-lg shadow dark:bg-slate-100"
+          >
             <a href="#">
-              <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                Noteworthy technology acquisitions 2021
-              </h5>
+              <img
+                className="rounded-t-lg h-[250px] max-w-80 md:max-w-[200px] lg:max-w-[250px] sm:max-h-[130px] sm:max-w-[100px]"
+                src={item[`imageUrl${itemIndex + 1}`]}
+                alt=""
+              />
             </a>
-            <a
-              href="#"
-              class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-            >
-              Read more
-              <svg
-                class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 14 10"
+            <div className="p-5 bg-slate-600 card-container h-20 flex justify-center items-center" >
+              <a href="#">
+                <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-base">
+                  {item.title}
+                </h5>
+              </a>
+              {/* <a
+                href="#"
+                className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
               >
-                <path
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M1 5h12m0 0L9 1m4 4L9 9"
-                />
-              </svg>
-            </a>
+                Read more
+                <svg
+                  className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 14 10"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M1 5h12m0 0L9 1m4 4L9 9"
+                  />
+                </svg>
+              </a> */}
+            </div>
           </div>
-        </div>
-        <div class="max-w-80 max-h-[400px]  bg-white border border-gray-200 rounded-lg shadow dark:bg-slate-100 ">
-          <a href="#">
-            <img
-              className="rounded-t-lg h-[250px]"
-              src={slides[currentIndex].imageUrl2}
-              alt=""
-            />
-          </a>
-          <div class="p-5">
-            <a href="#">
-              <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                Noteworthy technology acquisitions 2021
-              </h5>
-            </a>
-            <a
-              href="#"
-              class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-            >
-              Read more
-              <svg
-                class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 14 10"
-              >
-                <path
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M1 5h12m0 0L9 1m4 4L9 9"
-                />
-              </svg>
-            </a>
-          </div>
-        </div>
-        <div class="max-w-80 max-h-[400px]  bg-white border border-gray-200 rounded-lg shadow dark:bg-slate-100 ">
-          <a href="#">
-            <img
-              className="rounded-t-lg h-[250px]"
-              src={slides[currentIndex].imageUrl3}
-              alt=""
-            />
-          </a>
-          <div class="p-5">
-            <a href="#">
-              <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                Noteworthy technology acquisitions 2021
-              </h5>
-            </a>
-            <a
-              href="#"
-              class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-            >
-              Read more
-              <svg
-                class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 14 10"
-              >
-                <path
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M1 5h12m0 0L9 1m4 4L9 9"
-                />
-              </svg>
-            </a>
-          </div>
-        </div>
-        <div class="max-w-80 max-h-[400px]  bg-white border border-gray-200 rounded-lg shadow dark:bg-slate-100 ">
-          <a href="#">
-            <img
-              className="rounded-t-lg h-[250px]"
-              src={slides[currentIndex].imageUrl4}
-              alt=""
-            />
-          </a>
-          <div class="p-5">
-            <a href="#">
-              <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                Noteworthy technology acquisitions 2021
-              </h5>
-            </a>
-            <a
-              href="#"
-              class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-            >
-              Read more
-              <svg
-                class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 14 10"
-              >
-                <path
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M1 5h12m0 0L9 1m4 4L9 9"
-                />
-              </svg>
-            </a>
-          </div>
-        </div>
-        
+        ))}
       </div>
-      {/* <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
-        <BsChevronCompactLeft onClick={prevSlide} size={30} />
-      </div>
-      <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
-        <BsChevronCompactRight onClick={nextSlide} size={30} />
-      </div> */}
       <div className="flex top-4 justify-center py-2">
         {slides.map((slide, slideIndex) => (
           <div

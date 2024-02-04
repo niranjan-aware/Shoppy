@@ -157,25 +157,22 @@ const Categories = () => {
     <div className="grid grid-cols-6 gap-5 p-5  ">
     {slides.map((item, index) => (
       <div key={index} className="relative " >
-        <div className="max-w-56 bg-white border border-gray-200 rounded-lg shadow "  >
+        <div className="max-w-56  bg-white border border-gray-200 rounded-lg shadow "  >
           <a href="#">
             <img
-              className="rounded-t-lg"
+              className="rounded-t-lg h-[350px] md:h-[250px] lg:h-[300px] sm:h-[150px]"
               src={item.imageUrl}
               alt=""
             />
           </a>
 
-          <div className=" max-w-56 max-h-32 p-5 absolute bottom-0 left-0 right-0 bg-white bg-slate-200">
+          <div className=" max-w-56 max-h-28 p-5 absolute bottom-0 left-0 right-0 ">
             <a href="#">
-              <h5 className="mb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+              <h5 className="mb-1 sm:text-xs sm:font-light text-2xl font-bold tracking-tight text-white">
                 {item.content.title}
               </h5>
             </a>
-            <p className="mb-1 font-normal text-gray-700 dark:text-gray-400">
-              {item.content.description}
-            </p>
-            <a
+            {/* <a
               href="#"
               className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-slate-300 rounded-lg hover:bg-slate-300 focus:ring-4 focus:outline-none focus:ring-slate-300 dark:bg-slate-300 dark:hover:bg-slate-700 dark:focus:ring-slate-800"
             >
@@ -195,7 +192,7 @@ const Categories = () => {
                   d="M1 5h12m0 0L9 1m4 4L9 9"
                 />
               </svg>
-            </a>
+            </a> */}
           </div>
         </div>
       </div>

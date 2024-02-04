@@ -1,10 +1,69 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playpen+Sans:wght@200;300&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-    html{
-        font-family: 'Roboto';
+    :root {
+        --gradient: linear-gradient(
+            45deg,
+            #845ec2,
+            #d65db1,
+            #ff6f91,
+            #ff9671,
+            #ffc75f,
+            #f9f871
+        );
     }
+    @keyframes bg-animation {
+        0% {
+            background-position: left;
+        }
+        100% {
+            background-position: right;
+        }
+    }
+    html{
+        font-family: 'Oswald';
+        /* background-color: #fff1f2; */
+    }
+
+    .side-bar{
+        background-image: var(--gradient);
+    background-size: 300%;
+    animation: bg-animation 5s infinite alternate-reverse;
+    }
+
+    .button-with-background {
+        background-image: url('C:/Users/nirob/OneDrive/Desktop/shoppingapp/src/assets/abstract-blue-white-purple-artistic-background-abstract-blue-white-purple-artistic-background-flowing-paint-120917778.webp');
+        background-size: cover; /* or 'contain' depending on your preference */
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      .card-global-background{
+        background-image: url('C:/Users/nirob/OneDrive/Desktop/shoppingapp/src/assets/abstract-blue-background-white-striped-pattern-blocks-diagonal-lines-vintage-blue-texture-squares-distressed-faded-46703605.webp');
+        background-size: cover; /* or 'contain' depending on your preference */
+        background-position: center;
+        background-repeat: no-repeat;
+        object-fit: fill;
+        overflow: hidden;
+      }
+      .card-medal-background{
+        background-image: url('C:/Users/nirob/OneDrive/Desktop/shoppingapp/src/assets/artistic-spring-background-brush-marks-28618875.webp');
+        background-size: cover; /* or 'contain' depending on your preference */
+        background-position: center;
+        background-repeat: no-repeat;
+        object-fit: fill;
+        overflow: hidden;
+      }
+      /* C:\Users\nirob\OneDrive\Desktop\shoppingapp\src\assets\ */
+      /* url('C:/Users/nirob/OneDrive/Desktop/shoppingapp/src/assets/abstract-blue-background-white-striped-pattern-blocks-diagonal-lines-vintage-blue-texture-squares-distressed-faded-46703605.webp');
+      url('C:/Users/nirob/OneDrive/Desktop/shoppingapp/src/assets/abstract-blue-white-purple-artistic-background-abstract-blue-white-purple-artistic-background-flowing-paint-120917778.webp');
+      url('C:/Users/nirob/OneDrive/Desktop/shoppingapp/src/assets/abstract-fabric-flame-background-artistic-waving-cloth-fractal-pattern-70609361.webp');
+      url('C:/Users/nirob/OneDrive/Desktop/shoppingapp/src/assets/abstract-orange-background-8161984.webp');
+      url('C:/Users/nirob/OneDrive/Desktop/shoppingapp/src/assets/artistic-spring-background-brush-marks-28618875.webp');
+      url('C:/Users/nirob/OneDrive/Desktop/shoppingapp/src/assets/natural-macro-artistic-background-bird-feathers-blue-pink-purple-tone-155906178.webp');
+      url('C:/Users/nirob/OneDrive/Desktop/shoppingapp/src/assets/natural-macro-artistic-background-bird-feathers-blue-pink-purple-tone-155906178.webp');
+       */
 }

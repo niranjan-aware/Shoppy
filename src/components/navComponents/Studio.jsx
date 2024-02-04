@@ -8,7 +8,7 @@ const Studio = () => {
           <div className="flex justify-center items-center h-16">
             <button
               type="button"
-              className="inline-flex w-full justify-center gap-x-1.5  px-4 py-2 text-sm font-semibold text-gray-900 "
+              className="inline-flex w-full justify-center gap-x-1.5  px-4 py-2 text-sm font-semibold text-slate-500"
               id="menu-button"
               aria-expanded="true"
               aria-haspopup="true"
